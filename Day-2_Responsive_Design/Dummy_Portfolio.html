@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dummy Portfolio </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing:border-box;
+        }
+        body{
+            background-color: #F4F4F4;
+        }
+        #main{
+            width:90% ;
+            margin: 30px auto;
+        }
+        #header{
+            width: 100%;
+            background-color: #333333;
+            padding: 30px;
+        }
+        #header>h1{
+            font-size: 4rem;
+            text-align: center;
+            color: #00BCD4;
+        }
+        #navbar{
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            padding: 20px;
+            background-color: #444444;
+            font-size: 1.2rem;
+        }
+        #navbar>select{
+            display: none;
+        }
+        #navbar>div>a{
+            color: white;
+            text-decoration: none;
+        }
+        #content>div{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-radius: 10px;
+            margin: 20px auto;
+            padding: 60px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #content>div>img{
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit:contain;
+        }
+        #content>div>div{
+            width: 50%;
+            text-align: center;
+        }
+        #content>div>div>h2{
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        #home>div>h2{
+            color:#4CAF50;
+        }
+        #education>div>h2{
+            color:#e969b4;
+        }
+        #projects>div>h2{
+            color:#ffc107;
+        }
+        #skills>div>h2{
+            color:#9c27b0;
+        }
+        #contact>div>h2{
+            color:#6196f3;
+        }
+
+        @media only screen and (max-width:768px){
+
+            #header>h1{
+                font-size: 2rem;
+            }
+            #navbar{
+                font-size: 1rem;
+            }
+            #content>div{
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            }
+            #content>div>div{
+                width: 100%;
+                font-size: 1rem;
+                line-height: 25px;
+            }
+            #content>div>div>h2{
+                font-size: 1.5rem;
+            }
+            #navbar>div{
+                display: none;
+            }
+            #navbar>select{
+                display: inline-block;
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 1.5rem;
+                background-color: #555555;
+                color:white;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1> My Portfolio</h1>
+    </div>
+    <div id="navbar">
+        <div>
+            <a href="#home"> Home </a>
+        </div>
+        <div>
+            <a href="#education"> Education </a>
+        </div>
+        <div>
+            <a href="#projects"> Projects </a>
+        </div>
+        <div>
+            <a href="#skills"> Skills </a>
+        </div>
+        <div>
+            <a href="#contact"> Contact Me </a>
+        </div>
+        <select>
+            <option value="#home"> Home </option>
+            <option value="#education"> Education </option>
+            <option value="#projects"> Projects </option>
+            <option value="#skills"> Skills </option>
+            <option value="#contact"> Contact Me </option>
+
+        </select>
+    </div>
+    <div id="main">
+        <div id="content">
+            <div id="home">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREFIJDGSy0m5Ot-c3sg46up9SodvdItVAePI6xAXyRO8fGj_GdsP83t90QZg&s" alt="home">
+                <div>
+                    <h2> Home </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, vero? Neque odio fugiat similique reprehenderit, </p>
+                </div>                
+            </div>
+            <div id="education">
+                <img src="https://cdn2.hubspot.net/hub/53/file-1523365121-jpg/blog-files/content-300x237.jpg" alt="education">
+                <div>
+                    <h2> Education </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, vero? Neque odio fugiat similique reprehenderit, </p>
+                </div>                
+            </div>
+            <div id="projects">
+                <img src="https://media.licdn.com/dms/image/D4E12AQHThO1ZFI3qEw/article-inline_image-shrink_1500_2232/0/1692967073354?e=1717027200&v=beta&t=5L-pq49tzI1d4chxonYjduwjfrWTij3IHhugNO2HB6Y" alt="projects">
+                <div>
+                    <h2> Projects </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, vero? Neque odio fugiat similique reprehenderit, </p>
+                </div>                
+            </div>
+            <div id="skills">
+                <img src="https://assets-global.website-files.com/63be3a2848f0a90333755e42/63e21e2a2e050666636301b4_Cover%20the%20Skill%20Gap.png" alt="skills">
+                <div>
+                    <h2> Skills </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, vero? Neque odio fugiat similique reprehenderit, </p>
+                </div>                
+            </div>
+            <div id="contact">
+                <img src="https://riic2000.files.wordpress.com/2013/08/images-1.jpg?w=213" alt="contact Me">
+                <div>
+                    <h2> Contact Me </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, vero? Neque odio fugiat similique reprehenderit, </p>
+                </div>                
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
