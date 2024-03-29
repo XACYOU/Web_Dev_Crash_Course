@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family:cursive ;
+        }
+        #main{
+            width: 90%;
+            margin:  auto;
+        }
+        img{
+            width: 100%;
+        }
+        #header{
+            display: flex;
+            justify-content: space-between;
+        }
+        #rainbow-img{
+            position: relative;
+            width: 35%;
+            rotate: 150deg;
+            top: 50px;
+        }
+        #title{
+            width: 95%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #title>h1{
+            width: 80%;
+            font-size: 7.5rem;
+            text-align: center;
+
+        }
+        #title>img{
+            width: 10%;
+            height: 50%;
+            object-fit: scale-down;
+        }
+        #table{
+            margin-top: 50px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        #time{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            gap:20px;
+            width: 14%;
+        }
+        #time>div{
+            background-color: #BCEEF2;
+            border-radius: 25px;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #week{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px 30px;
+            width: 80%;
+        }
+        #week>div{
+            border-radius: 25px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       #week>div:nth-child(5n+1),#week>div:nth-child(5n+3),#week>div:nth-child(5n+5) {
+             background-color: #FFD6EF;
+        }
+        #week>div:nth-child(5n+2),#week>div:nth-child(5n+4) {
+            background-color: #FAECAA;
+        }
+        #note{
+            width: 90%;
+            margin: auto;
+            border-radius: 35px;
+            background-color: #BCEEF2;
+        }
+        #note>p{
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="rainbow-img">
+                <img src="https://clipart-library.com/new_gallery/1041559_pastel-rainbow-png.png" alt="rainbow-img">
+            </div>
+            <div id="title">
+                <img src="https://media.istockphoto.com/id/1315287261/vector/glitter-mark.jpg?s=612x612&w=0&k=20&c=Ra7tmVKW29rlhv_dn92AD49CyRduqNmyePl1EzCKfrw=" alt="star-1">
+                <h1> Weekly schedule </h1>
+                <img src="https://media.istockphoto.com/id/1315287261/vector/glitter-mark.jpg?s=612x612&w=0&k=20&c=Ra7tmVKW29rlhv_dn92AD49CyRduqNmyePl1EzCKfrw=" alt="star-2">
+            </div>
+        </div>
+
+        <div id="table">
+            <div id="time">
+                <div> 08:00 </div>
+                <div> 09:00 </div>
+                <div> 10:00 </div>
+                <div> 11:00 </div>
+                <div> 12:00 </div>
+                <div> 13:00 </div>
+                <div> 14:00 </div>
+                <div> 15:00 </div>
+                <div> 16:00 </div>
+            </div>
+
+            <div id="week">
+                <div> Monday </div>
+                <div> Tuesday </div>
+                <div> Wednesday </div>
+                <div> Thrusday </div>
+                <div> Friday </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div id="note">
+            <p>Note:</p>
+        </div>
+    </div>
+</body>
+</html>
