@@ -33,6 +33,7 @@ header > img{
     object-fit: scale-down;
     margin-left: 40px;
 }
+
 nav{
     width: 100%;
     background-color: #2d2d2d;
@@ -84,4 +85,15 @@ nav > #searchbar>p{
     padding: 20px;
     font-size: 0.9rem;
     color: grey;
+}
+#discount-banner{
+    width: 100%;
+    text-align: center;
+    background-color: #9CF0E0;
+}
+#discount-banner>p{
+    color: black;
+    font-weight: bolder;
+    word-spacing: 5px;
+    line-height: 1.2;
 }
