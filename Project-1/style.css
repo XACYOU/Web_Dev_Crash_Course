@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    /* font-family:; */
 }
 
 header{
@@ -13,22 +13,16 @@ header{
     /* border: 1px solid; */
     text-align: center;
     align-items: center;
+    background-color:#F8F8F8;
 }
 header>p{
-    /* border-left: 1px solid;
-    border-right: 1px solid; */
     margin-left: 40px;
-
 }
-hr{
+header>hr{
     height: 30px;
     margin-left: 40px;
+    border-color: #F8F8F8;
 }
-.vertical {
-    border-left: 1px solid black;
-    height: 10px;
-}
-
 header > img{
     width: 30px;
     height: 30px;
@@ -36,4 +30,49 @@ header > img{
     overflow: hidden;
     object-fit: scale-down;
     margin-left: 40px;
+}
+nav{
+    width: 100%;
+    background-color: #2d2d2d;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+nav>a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+nav>#nav-logo{
+    font-size: 2rem;
+}
+nav>hr{
+    height: 50px;
+    border-color: #F8F8F8;
+}
+nav >img{
+    width: 25px;
+    mix-blend-mode:screen;
+}
+nav > #searchbar{
+    background-color: white;
+    width: 30%;
+    height: 40px;
+    border-radius: 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav > #searchbar>img{
+    width: 20px;
+    padding: 20px;
+}
+nav > #searchbar>p{
+    padding: 20px;
+    font-size: 0.9rem;
+    color: grey;
 }
