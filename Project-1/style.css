@@ -155,7 +155,7 @@ nav > #searchbar>p{
 }
 #home-page-image-footer{
     position: absolute;
-    top:95.2%;
+    top:96.3%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -220,10 +220,10 @@ footer>div{
     justify-content: space-evenly;
     padding: 32px 0px;
 }
-footer>div:last-child>div{
+/* footer>div:last-child>div{
     display: flex;
     align-items: start;
-}
+} */
 
 #footer-copyright{
     background-color: #DDDDDD;
@@ -241,4 +241,55 @@ footer>div:last-child>div{
 }
 #footer-copyright>div>p,#footer-copyright>div>hr{
     margin: 0px 10px;
+}
+
+@media screen and (max-width: 1023px){
+    .hide{
+        display: none;
+    }
+    nav>#searchbar{
+        width:70%
+    }
+    #home-page-image{
+        width: 100%;
+        height: 83vh;
+        border: 2px solid;
+    }
+    #home-page-image>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #image-center-elements>h1{
+        font-size: 3.5rem;
+        width: 55%;
+        padding: 10px;
+    }
+    #image-center-elements>p{
+        font-size: 1.1rem;
+        word-spacing: 2px;
+        margin-top: -10px;
+    }
+    #image-center-elements{
+        top:43%;
+    }
+    #home-page-image-shop-buttons{
+        top:53%;
+        width: 400px;
+    }
+    #home-page-image-shop-buttons>button{
+        width: 43%;
+        height: 40px;
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+    #home-page-image-footer{
+        top:95.7%;
+        left: 50%;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+    } 
 }
