@@ -199,3 +199,28 @@ nav > #searchbar>p{
 #social-media-links>hr{
     height: 50%;
 }
+
+footer{
+    width: 100%;
+    height: 200px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #EEEEEE;
+    color: #666666;
+    font-size: 0.9rem;
+}
+.footer-bold{
+    font-weight: bolder;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+footer>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+footer>div:last-child>div{
+    display: flex;
+    justify-content: space-evenly;
+}
