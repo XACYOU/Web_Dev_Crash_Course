@@ -173,3 +173,29 @@ nav > #searchbar>p{
 #home-page-image-footer>div>h3{
     font-weight: bolder;
 }
+
+#social-media-links{
+    width: 60%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#social-media-logos,#payment-logos{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#social-media-logos>img,#payment-logos>img{
+    width: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+#payment-logos>img{
+    border-radius: 0;
+}
+#social-media-links>hr{
+    height: 50%;
+}
