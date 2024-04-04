@@ -108,8 +108,11 @@ nav > #searchbar>p{
     margin: auto;
     position: relative;
 }
-#home-page-image>img{
+#home-page-image-desktop{
     width: 100%;
+}
+#home-page-image-mobile{
+    display: none;
 }
 #image-center-elements{
     position: absolute;
@@ -253,12 +256,11 @@ footer>div{
     #home-page-image{
         width: 100%;
         height: 83vh;
-        border: 2px solid;
     }
-    #home-page-image>img{
+    #home-page-image-desktop{
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit:cover;
     }
     #image-center-elements>h1{
         font-size: 3.5rem;
@@ -292,4 +294,19 @@ footer>div{
         letter-spacing: 2px;
         font-size: 0.9rem;
     } 
+}
+
+@media screen and (max-width: 768px){
+
+    #discount-banner,#home-page-image-desktop,#home-page-image-footer{
+        display: none;
+    }
+    #searchbar{
+        visibility: hidden;
+    }
+    #home-page-image-mobile{
+        display:inline;
+        width: 100%;
+    }
+
 }
