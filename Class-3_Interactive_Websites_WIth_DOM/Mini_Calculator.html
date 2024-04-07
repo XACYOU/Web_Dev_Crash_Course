@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+        <input id="first" type="number" placeholder="enter 1st number">
+        <input id="second" type="number" placeholder="enter 2nd number">
+    </div>
+
+    <div>  
+        <button id="add"> Add </button>
+        <button id="subtract"> Subtract </button>
+        <button id="multiply"> Multiply </button>
+        <button id="divide"> Divide </button>
+    </div>
+    <script>
+        let num1=document.getElementById("first");
+        let num2=document.getElementById("second");
+        let add=document.getElementById("add");
+        let subtract=document.getElementById("subtract");
+        let multiply=document.getElementById("multiply");
+        let divide=document.getElementById("divide");
+
+        add.addEventListener("click",()=>{
+            let a=+num1.value;
+            let b=+num2.value;
+            alert(a+b);
+        })
+        subtract.addEventListener("click",()=>{
+            let a=+num1.value;
+            let b=+num2.value;
+            alert(a-b);
+        })
+        multiply.addEventListener("click",()=>{
+            let a=+num1.value;
+            let b=+num2.value;
+            alert(a*b);
+        })
+        divide.addEventListener("click",()=>{
+            let a=+num1.value;
+            let b=+num2.value;
+            alert(a/b);
+        })
+
+    </script>
+</body>
+</html>
