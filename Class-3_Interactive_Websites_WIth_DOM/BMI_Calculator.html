@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Check you BMI </h1>
+    <p> Enter your weight and height below to check your BMI results</p>
+
+    <div>
+        <p> Put your weight in here (KG) </p>
+        <input id="weight" type="text" placeholder="Your weight(KG)">
+
+        <p> And your height in here (CM) </p>
+        <input id="height" type="text" placeholder="Your weight(KG)">
+
+        <button id="btn" style="display: block"> Calculate BMI </button>
+    </div>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        let weight = document.querySelector('#weight');
+        let height = document.querySelector('#height');
+        let btn = document.querySelector('#btn');
+        let result = document.querySelector('#result');
+
+        btn.addEventListener('click',() => {
+
+            let text= document.createElement('p');
+            let bmi =  +(weight.value) / (+(height.value/100) * +(height.value/100));
+            let category;
+
+            if(bmi<=18.4){
+                category="Under Weight";
+            }else if(bmi>=18.5 && bmi<=24.9){
+                category="Normal Weight";
+            }else if(bmi>=25 && bmi<=29.9){
+                category="Over Weight";
+            }else if(bmi>=30){
+                category="Obese";
+            }
+
+            text.innerText=`Your BMI is ${bmi} which means You are ${category}`
+
+            result.append(text);
+            // category=""
+        })
+    </script>
+</body>
+</html>
