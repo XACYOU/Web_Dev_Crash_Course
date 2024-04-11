@@ -1,0 +1,94 @@
+/* Fill CSS here */
+*{
+    font-family:sans-serif;
+    margin: 0;
+    /* padding: 0; */
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 50px;
+    font-size: 4rem;
+    color: #0468AA;
+}
+#cont{
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+form{
+    width: 25%;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+form>label{
+    font-weight: bold;
+}
+form>input,form>select{
+    height: 40px;
+    margin-top: -10px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style:groove;
+    border-color: gainsboro;
+}
+input[type="submit"]{
+    background-color: #1067a1;
+    color: white;
+    height: 55px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    border: 0px;
+}
+
+table{
+    width: 65%;
+    display: inline-block;
+}
+table>thead>tr>th{
+    background-color: #1067a1;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+
+table>tbody>tr>td{
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+} 
+table>tbody>tr:nth-child(even){
+    background-color: #e9f1fc;
+}
+table>tbody>tr:nth-child(odd){
+    background-color: #afdbff;
+}
+table>tbody>tr>td:last-child{
+    background-color: rgb(209, 8, 8);
+}
+#delete{
+    border: 0px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+}
+
+#sortDepartment{
+    text-align: center;
+    padding: 20px;
+}
+#sortDepartment>select{
+    text-align: center;
+    padding: 20px;
+    font-size: larger;
+    font-weight: bolder;
+}
