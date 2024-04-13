@@ -263,6 +263,39 @@ nav > #searchbar>p{
     font-size: 1rem;
     font-family: sans-serif;
 }
+#below-feature{
+    width: 55%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#below-feature>div{
+    width: 45%;
+    text-align: center;
+}
+#below-feature>div>img{
+    width: 100%;
+}
+#below-feature>div>h2{
+    font-weight: bold;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+#below-feature>div>p{
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    color: #666666;
+}
+#below-feature>div>button{
+    font-weight: bolder;
+    font-family: sans-serif;
+    padding: 20px;
+    width: 150px;
+    background-color: white;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
 #social-media-links{
     width: 60%;
     height: 60px;
