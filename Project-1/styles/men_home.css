@@ -328,6 +328,30 @@ nav > #searchbar>p{
     color: white;
     width: 13%;
 }
+#trending-brand{
+    border-bottom: 1px solid #e7e7e7 ;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#trending-brand>h1{
+    font-family: sans-serif;
+    font-weight: 700;
+}
+#trending-brand>div{
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 70px;
+}
+#trending-brand>div>img{
+    width: 15%;
+}
 
 #social-media-links{
     width: 60%;
