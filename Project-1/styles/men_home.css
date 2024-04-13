@@ -149,6 +149,74 @@ nav > #searchbar>p{
     line-height: 1.2;
 }
 
+#sales-banner{
+    background-color: #9557fc;
+    background-image: linear-gradient(180deg, #9557fc 0%, #9cf0e0 49%);
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+#button-div>button{
+    margin: 20px;
+    border-radius: 30px;
+    border: 0px;
+    width: 150px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+#sale-text>h1{
+    font-family: sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    font-style: italic;
+}
+#sale-text>h2{
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px auto;
+
+}
+#sale-text>p{
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    margin-top: 30px;
+}
+#product-banner{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 40px auto;
+}
+#product-banner>div{
+    width: 15%;
+    background-color: #FFFEFF;
+}
+#product-banner>div>img{
+    width: 100%;
+}
+#product-banner>div>p{
+    font-family: sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+}
+#view-prod-btn{
+    padding: 20px;
+}
+#view-prod-btn>button{
+    padding: 15px;
+    width: 200px;
+    background-color: #FFFEFF;
+    border: 0px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}
 #social-media-links{
     width: 60%;
     height: 60px;
@@ -195,10 +263,6 @@ footer>div{
     justify-content: space-evenly;
     padding: 32px 0px;
 }
-/* footer>div:last-child>div{
-    display: flex;
-    align-items: start;
-} */
 
 #footer-copyright{
     background-color: #DDDDDD;
