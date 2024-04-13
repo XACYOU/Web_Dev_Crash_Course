@@ -295,6 +295,39 @@ nav > #searchbar>p{
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
+#app-banner{
+    background-color: #ff4566;
+    background-image: linear-gradient(90deg, #fa375b 0%, #f798b9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.3rem;
+    letter-spacing: 2.5px;
+}
+#app-banner>div{
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 11%;
+    text-align: center;
+    padding: 8px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium';
+    background-color: transparent;
+}
+#app-banner>p{
+    text-align: center;
+    padding: 5px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 1.5rem;
+}
+#app-banner>div:last-child{
+    background-color: black;
+    color: white;
+    width: 13%;
+}
 
 #social-media-links{
     width: 60%;
