@@ -217,6 +217,26 @@ nav > #searchbar>p{
     font-family: sans-serif;
     letter-spacing: 3px;
 }
+#menswear-basic-banner{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin: 40px auto;
+    position: relative;
+}
+#menswear-basic-banner>button{
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: sans-serif;
+    background-color: white;
+    border: 0px;
+    position:absolute;
+    top:80%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  
+}
 #social-media-links{
     width: 60%;
     height: 60px;
