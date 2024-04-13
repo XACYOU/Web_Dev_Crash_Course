@@ -218,11 +218,14 @@ nav > #searchbar>p{
     letter-spacing: 3px;
 }
 #menswear-basic-banner{
-    width: 70%;
+    width: 65%;
     margin: auto;
     text-align: center;
     margin: 40px auto;
     position: relative;
+}
+#menswear-basic-banner>img{
+    width: 100%;
 }
 #menswear-basic-banner>button{
     padding: 10px;
@@ -233,9 +236,32 @@ nav > #searchbar>p{
     border: 0px;
     position:absolute;
     top:80%;
-    left: 50%;
+    left: 48%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);  
+}
+#feature-banner{
+    width: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#feature-banner>div{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    letter-spacing: 1px;
+}
+#feature-banner>div>img{
+    width: 100%;
+}
+#feature-banner>div>h3{
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: sans-serif;
 }
 #social-media-links{
     width: 60%;
