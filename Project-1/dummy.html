@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Dropdown Button */
+/* Hide dropdown by default */
+.dropdown {
+    display: none;
+    width: 40%;
+}
+
+/* Show dropdown when button is hovered */
+.dropbtn:hover + .dropdown {
+    display: block;
+}
+
+#drop-top{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #DDDDDD;
+    align-items: center;
+}
+#drop-top>div{
+    width: 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #666666;
+    margin: 10px;
+}
+#drop-top>div:first-child{
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#drop-top>div:first-child>hr{
+    height: 1rem;
+    width: 1px;
+    background-color: #666666;
+}
+#drop-top>div>img{
+    width: 100%;
+}
+#drop-bottom>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #666666;
+
+}
+#drop-bottom>div>img{
+    width: 30px;
+    height: 30px;
+    margin: auto 20px;
+}
+
+</style>
+</head>
+<body>
+    <button class="dropbtn"> Click me </button>
+    <div class="dropdown">
+        <div id="drop-top">
+            <div>
+                <a href=""> Sign In </a>
+                <hr>
+                <a href=""> Join </a>
+            </div>
+            <div>
+                <img id="cancel-btn" src="https://cdn2.iconfinder.com/data/icons/css-vol-1/24/close-256.png" alt="cancel">
+            </div>
+        </div>
+        <div id="drop-bottom">
+            <div>
+                <img src="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-256.png" alt="account">
+                <p> My Account </p>
+            </div>
+            <div>
+                <img src="https://cdn0.iconfinder.com/data/icons/phosphor-regular-vol-3/256/package-256.png" alt="order">
+                <p> My Orders </p>
+            </div>
+            <div>
+                <img src="https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/question-mark-circle-256.png" alt="return">
+                <p> Returns Information </p>
+            </div>
+            <div>
+                <img src="https://cdn0.iconfinder.com/data/icons/mobile-basic-vol-1/32/Chat-256.png" alt="contact">
+                <p> Contact Preferences </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+
+// JavaScript
+    let dropbtn = document.querySelector('.dropbtn');
+    let dropdown = document.querySelector('.dropdown');
+    let cancelBtn = document.querySelector('#cancel-btn');
+
+    // Toggle dropdown visibility when button is clicked
+    dropbtn.addEventListener('click',()=> {
+        if(dropdown.style.display == 'block'){
+            dropdown.style.display ='none';
+        }else{
+            dropdown.style.display ='block';
+        }
+    });
+
+    dropbtn.addEventListener('hover', ()=> {
+        if(dropdown.style.display == 'block'){
+            dropdown.style.display ='none';
+        }else{
+            dropdown.style.display ='block';
+        }
+    });    
+
+    // Hide dropdown when cancel button is clicked
+    cancelBtn.addEventListener('click', ()=> {
+        dropdown.style.display = 'none';
+    });
+    
+</script>
+</html>

@@ -65,11 +65,14 @@ nav>hr{
     margin: 0px 10px;
 
 }
-nav >img{
+#profile-icon>img,nav >img{
     width: 25px;
     mix-blend-mode:screen;
     margin: 0px 10px;
-
+}
+#profile-icon{
+    padding:16px 0px;
+    border-radius: 10px;
 }
 nav > #searchbar{
     background-color: white;
@@ -89,6 +92,67 @@ nav > #searchbar>p{
     padding: 20px;
     font-size: 0.9rem;
     color: grey;
+}
+.dropdown {
+    display: none;
+    width: 20%;
+    background-color: white;
+    position: absolute;
+    top: calc(11% + 17px);
+    left: 87%; 
+    transform: translateX(-50%);
+    z-index: 12; 
+
+}
+#profile-icon:hover{
+    border: 1px solid white;
+}
+#profile-icon:hover + .dropdown {
+    display: block;
+}
+#drop-top{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #DDDDDD;
+    align-items: center;
+}
+#drop-top>div{
+    width: 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+#drop-top>div>a{
+    color: #666666;
+}
+#drop-top>div:first-child{
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#drop-top>div:first-child>hr{
+    height: 1rem;
+    width: 1px;
+    background-color: #666666;
+}
+#drop-top>div>img{
+    width: 100%;
+}
+#drop-bottom>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #666666;
+
+}
+#drop-bottom>div>img{
+    width: 30px;
+    height: 30px;
+    margin: auto 20px;
 }
 #discount-banner{
     width: 100%;
@@ -155,6 +219,7 @@ nav > #searchbar>p{
     padding: 10px;
     margin-top: 50px;
     border: 0px;
+    cursor: pointer;
 }
 #home-page-image-footer{
     position: absolute;
