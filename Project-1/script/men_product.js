@@ -147,6 +147,8 @@ let data=[
 let productCartStored=[];
 
 let prodCont=document.querySelector("#prod-cont");
+let sortFilter=document.querySelector("#sort-filter");
+let categoryFilter=document.querySelector("#category-filter");
 
 let saveData=()=>{
     localStorage.setItem("products", JSON.stringify(productCartStored));
@@ -155,52 +157,89 @@ let saveData=()=>{
 
 let oLoad=()=>{
     let stored=JSON.parse(localStorage.getItem("products"));
-    if(stored.length){
+    if(stored?.length){
         productCartStored=stored;
     }
 }
 
+sortFilter.addEventListener("change",(e)=>{
+    // console.log(e);
+    let value=e.target.value;
+
+    if(value=="all"){
+        displayProduct(data);
+    }else if(value=="high-to-low"){
+        let newData=data.sort((a,b)=>{
+            return b.productPrice-a.productPrice;
+        })
+        displayProduct(newData);
+    }else if(value=="low-to-high"){
+        let newData=data.sort((a,b)=>{
+            return a.productPrice-b.productPrice;
+        })
+        displayProduct(newData);
+    }
+})
+
+categoryFilter.addEventListener("change",(e)=>{
+    let value=e.target.value;
+    
+    if(value=="all"){
+        displayProduct(data);
+    }else{
+        let newData=data.filter((ele)=>{
+            return ele.category==value;
+        })
+        displayProduct(newData);
+    }
+})
+
 oLoad();
 
-data.forEach((ele, i)=>{
-    ele.id=i+1;
-    ele.quantity=1;
-
-    let prodCard=document.createElement("div");
-    prodCard.id="prod-card";
-
-    let prodImg=document.createElement("img");
-    prodImg.id="prod-img";
-    prodImg.src=ele.imageURL
-
-    let prodTitle=document.createElement("p");
-    prodTitle.id="prod-title";
-    prodTitle.innerText=ele.productTitle;
-
-    let catPri=document.createElement("div");
-    catPri.id="cat-pri";
-
-    let prodCategory=document.createElement("p");
-    prodCategory.id="prod-category";
-    prodCategory.innerText=`${ele.category}`;
-
-    let prodPrice=document.createElement("p");
-    prodPrice.id="prod-price";
-    prodPrice.innerText=`$${ele.productPrice}`;
-
-    let prodCartBtn=document.createElement("button");
-    prodCartBtn.id="prod-cart-btn";
-    prodCartBtn.innerText="Add to cart";
-
-
-    catPri.append(prodPrice,prodCategory);
-    prodCard.append(prodImg,prodTitle,catPri,prodCartBtn);
-    prodCont.append(prodCard)
-
-
-    prodCartBtn.addEventListener("click",()=>{
-
-        productCartStored.push(ele);
-        saveData();
-    })
-})
+let displayProduct = (data)=>{
+    prodCont.innerHTML=""
+    // console.log(data);
+    data.forEach((ele, i)=>{
+        ele.id=i+1;
+        ele.quantity=1;
+    
+        let prodCard=document.createElement("div");
+        prodCard.id="prod-card";
+    
+        let prodImg=document.createElement("img");
+        prodImg.id="prod-img";
+        prodImg.src=ele.imageURL
+    
+        let prodTitle=document.createElement("p");
+        prodTitle.id="prod-title";
+        prodTitle.innerText=ele.productTitle;
+    
+        let catPri=document.createElement("div");
+        catPri.id="cat-pri";
+    
+        let prodCategory=document.createElement("p");
+        prodCategory.id="prod-category";
+        prodCategory.innerText=`${ele.category}`;
+    
+        let prodPrice=document.createElement("p");
+        prodPrice.id="prod-price";
+        prodPrice.innerText=`$${ele.productPrice}`;
+    
+        let prodCartBtn=document.createElement("button");
+        prodCartBtn.id="prod-cart-btn";
+        prodCartBtn.innerText="Add to cart";
+    
+    
+        catPri.append(prodPrice,prodCategory);
+        prodCard.append(prodImg,prodTitle,catPri,prodCartBtn);
+        prodCont.append(prodCard)
+    
+    
+        prodCartBtn.addEventListener("click",()=>{
+    
+            productCartStored.push(ele);
+            saveData();
+        })
+    });
+}
+displayProduct(data);
