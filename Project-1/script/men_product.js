@@ -144,11 +144,66 @@ let data=[
         category: "T-Shirt"
     }
 ]
+
+let shopWomenBtn = document.querySelector("#shop-women-btn");
+let shopMenBtn = document.querySelector("#shop-men-btn");
+let profileIcon = document.querySelector("#profile-icon");
+let dropdown = document.querySelector('.dropdown');
+let cancelBtn = document.querySelector('#cancel-btn');
+let moveToProd = document.querySelectorAll('.move-to-prod');
+let shoppingBag= document.querySelector('#shopping-bag');
+
+let currentUserIndex = JSON.parse(localStorage.getItem('currentUserIndex'));
+
+console.log(currentUserIndex);
+
+shoppingBag.addEventListener('click', ()=>{
+    window.location.href="../html/cart.html"
+})
+
+shopWomenBtn.addEventListener("click", ()=> {
+    window.location.href="../html/women_home.html"
+})
+
+shopMenBtn.addEventListener("click", ()=> {
+    window.location.href="../html/women_home.html"
+    
+})
+moveToProd.forEach ((ele)=> { 
+
+    ele.addEventListener("click", ()=> {
+        window.location.href="../html/men_product.html"
+    });
+})
+
+profileIcon.addEventListener('click',()=> {
+    if(dropdown.style.display == 'block'){
+        dropdown.style.display ='none';
+    }else{
+        dropdown.style.display ='block';
+    }
+    profileIcon.style.border = '1px solid white';
+});
+
+profileIcon.addEventListener('hover', ()=> {
+    if(dropdown.style.display == 'block'){
+        dropdown.style.display ='none';
+    }else{
+        dropdown.style.display ='block';
+    }
+});    
+
+cancelBtn.addEventListener('click', ()=> {
+    dropdown.style.display = 'none';
+    profileIcon.style.border = 'none';
+});
+
 let productCartStored=[];
 
 let prodCont=document.querySelector("#prod-cont");
 let sortFilter=document.querySelector("#sort-filter");
 let categoryFilter=document.querySelector("#category-filter");
+
 
 let saveData=()=>{
     localStorage.setItem("products", JSON.stringify(productCartStored));
@@ -227,7 +282,7 @@ let displayProduct = (data)=>{
     
         let prodCartBtn=document.createElement("button");
         prodCartBtn.id="prod-cart-btn";
-        prodCartBtn.innerText="Add to cart";
+        prodCartBtn.innerText="Add to Bag";
     
     
         catPri.append(prodPrice,prodCategory);

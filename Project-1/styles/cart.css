@@ -85,7 +85,6 @@ nav>hr{
 #profile-icon{
     border-radius: 10px;
     border: 0px;
-    cursor: pointer;
 }
 .dropdown {
     display: none;
@@ -147,9 +146,6 @@ nav>hr{
     width: 30px;
     height: 30px;
     margin: auto 20px;
-}
-#shopping-bag{
-    cursor: pointer;
 }
 nav >img{
     width: 25px;
@@ -225,29 +221,8 @@ nav > #searchbar>p{
     word-spacing: 5px;
     line-height: 1.2;
 }
-#last-chance-text>h1{
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    padding: 25px;
-    font-family: Verdana;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
 #prod-parent-cont{
     width: 100%;
-}
-#prod-filters{
-    width: 100%;
-    margin:auto;
-    border-bottom: 1px solid #e0e0e0;
-    margin-top: 20px;
-}
-#prod-filters>select{
-    padding: 10px;
-    background-color: #525050;
-    color: white;
-    margin-left: 200px;
-    font-weight: 900;
 }
 #prod-cont{
     width: 70%;
@@ -293,4 +268,56 @@ nav > #searchbar>p{
     border-radius: 20px;
     margin: 0 0 40px 0;
     border: 0px;
+}
+#quantity{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+#quantity>button{
+    background-color: #525050;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 0px;
+    font-weight: 600;
+}
+#quantity>p{
+    font-size: 2rem;
+    color: #525050;
+    font-weight: 600;
+}
+#checkout-cont{
+    width: 400px;
+    margin: 20px auto;
+
+}
+#checkout-cont>h2{
+    font-size: 4rem;
+    background-color:#2d2d2d;
+    padding: 10px;
+    color: white;
+    text-align: center;
+
+}
+#total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#total>p{
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 10px;
+    color: #666666;
+}
+#checkout-cont>button{
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    border: 0px;
+    background-color: rgb(0, 179, 0);
+    color: white;
+    padding: 10px;
 }
