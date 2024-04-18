@@ -153,10 +153,6 @@ let cancelBtn = document.querySelector('#cancel-btn');
 let moveToProd = document.querySelectorAll('.move-to-prod');
 let shoppingBag= document.querySelector('#shopping-bag');
 
-let currentUserIndex = JSON.parse(localStorage.getItem('currentUserIndex'));
-
-console.log(currentUserIndex);
-
 shoppingBag.addEventListener('click', ()=>{
     window.location.href="../html/cart.html"
 })
@@ -167,10 +163,8 @@ shopWomenBtn.addEventListener("click", ()=> {
 
 shopMenBtn.addEventListener("click", ()=> {
     window.location.href="../html/women_home.html"
-    
 })
 moveToProd.forEach ((ele)=> { 
-
     ele.addEventListener("click", ()=> {
         window.location.href="../html/men_product.html"
     });
@@ -184,14 +178,6 @@ profileIcon.addEventListener('click',()=> {
     }
     profileIcon.style.border = '1px solid white';
 });
-
-profileIcon.addEventListener('hover', ()=> {
-    if(dropdown.style.display == 'block'){
-        dropdown.style.display ='none';
-    }else{
-        dropdown.style.display ='block';
-    }
-});    
 
 cancelBtn.addEventListener('click', ()=> {
     dropdown.style.display = 'none';
@@ -207,13 +193,14 @@ let categoryFilter=document.querySelector("#category-filter");
 
 let saveData=()=>{
     localStorage.setItem("products", JSON.stringify(productCartStored));
-    // console.log(productCartStored);
 }
 
 let oLoad=()=>{
     let stored=JSON.parse(localStorage.getItem("products"));
-    if(stored?.length){
+    
+    if(stored){
         productCartStored=stored;
+        console.log(productCartStored);
     }
 }
 
@@ -256,7 +243,6 @@ let displayProduct = (data)=>{
     // console.log(data);
     data.forEach((ele, i)=>{
         ele.id=i+1;
-        ele.quantity=1;
     
         let prodCard=document.createElement("div");
         prodCard.id="prod-card";
@@ -289,12 +275,13 @@ let displayProduct = (data)=>{
         prodCard.append(prodImg,prodTitle,catPri,prodCartBtn);
         prodCont.append(prodCard)
     
-    
+        // console.log({...ele});
         prodCartBtn.addEventListener("click",()=>{
-    
+            
             productCartStored.push(ele);
             saveData();
-        })
+        });
     });
+    console.log(productCartStored);
 }
 displayProduct(data);

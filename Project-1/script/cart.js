@@ -53,7 +53,7 @@ let displayProduct = (data)=>{
     
         let prodPrice=document.createElement("p");
         prodPrice.id="prod-price";
-        prodPrice.innerText=`$${ele.productPrice}`;
+        prodPrice.innerText=`$${ele.quantity*ele.productPrice}`;
 
         let quantity=document.createElement("div");
         quantity.id="quantity";
