@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #timer-cont{
+            width: 30%;
+            margin: 50px auto;
+        }
+        #input-cont{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+        #input-cont input{
+            font-size: 2rem;
+            width: 27%;
+            text-align: center;
+        }
+        #buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #buttons button{
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer-cont">
+        <div id="input-cont">
+            <input id="hour" type="number" placeholder="00h">
+            <input id="min" type="number" placeholder="00m">
+            <input id="sec" type="number" placeholder="00s">
+        </div>
+        <div id="buttons">
+            <button id="start"> START </button>
+            <button id="pause"> PAUSE </button>
+            <button id="reset"> RESET </button>
+        </div>
+    </div>
+</body>
+<script>
+    let Hour = document.querySelector('#hour');
+    let Min = document.querySelector('#min');
+    let Sec = document.querySelector('#sec');
+    let start = document.querySelector('#start');
+    let pause = document.querySelector('#pause');
+    let reset = document.querySelector('#reset');
+
+    let timer;
+    let hoursLeft;
+    let minutesLeft;
+    let secondsLeft;
+
+    Hour.oninput = ()=>{
+        Hour.value = Hour.value.slice(0, 2);
+        
+        if(Hour.value > 23) Hour.value = 23;
+    }
+
+    Min.oninput = ()=>{
+        Min.value = Min.value.slice(0, 2);
+        if(Min.value > 59) Min.value = 59;
+    }
+
+    Sec.oninput = ()=>{
+        Sec.value = Sec.value.slice(0, 2);
+        if(Sec.value > 59) Sec.value = 59;
+    }
+
+    start.addEventListener('click', ()=>{
+        let hour = +Hour.value;
+        let min = +Min.value;
+        let sec = +Sec.value;
+
+        let totalSec = hour*3600 + min*60 + sec;
+        console.log(totalSec);
+
+        timer = setInterval(()=>{
+
+            if(totalSec <= 0){
+                clearInterval(timer);
+                alert("Timer Finished");
+            }else{
+                totalSec--;
+                hoursLeft = Math.floor((totalSec/3600));
+                minutesLeft = Math.floor((totalSec % 3600) / 60);
+                secondsLeft = totalSec % 60;
+
+                Hour.value = (hoursLeft < 10) ? `0${hoursLeft}`: hoursLeft;
+                Min.value = (minutesLeft < 10) ? `0${minutesLeft}`: minutesLeft;
+                Sec.value = (secondsLeft < 10) ? `0${secondsLeft}`: secondsLeft;
+            }
+
+        }, 1000);
+    })
+
+    pause.addEventListener('click', ()=>{
+        clearInterval(timer);
+    })
+
+    reset.addEventListener('click', ()=>{
+        clearInterval(timer);
+        hoursLeft = 0;
+        minutesLeft = 0;
+        secondsLeft = 0;
+        Hour.value = "00";
+        Min.value = "00";
+        Sec.value = "00";
+
+    })
+
+</script>
+</html>
