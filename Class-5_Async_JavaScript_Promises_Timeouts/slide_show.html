@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slide_show{
+            width: 50%;
+            margin: auto;
+        }
+        #images{
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        #images img{
+            width: 100%;
+        }
+        #buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #buttons button{
+            font-size: 1.5rem;
+            padding: 15px;
+            margin: 5px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slide_show">
+        <div id="images">
+
+        </div>
+        <div id="buttons">
+            <button id="next"> NEXT </button>
+            <button id="start_stop"> START </button>
+            <button id="previous"> PREVIOUS </button>
+        </div>
+    </div>
+</body>
+<script>
+    let images = [
+    "https://images.asos-media.com/products/asos-design-oversized-tank-in-charcoal/205875115-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-muscle-fit-t-shirt-with-crew-neck-in-black/203291724-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-6mm-glass-faux-pearl-beaded-bracelet-in-white/201876568-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-slim-regular-length-denim-short-in-black/205574922-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/topman-oversized-fit-sleeveless-t-shirt-in-stone/205600977-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/clarks-torhill-hi-boots-in-black-suede/205758664-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-nylon-tote-bag-in-khaki/205117194-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/reclaimed-vintage-90s-baggy-dad-in-ecru/205321616-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/calvin-klein-jeans-90s-straight-leg-jeans-in-light-blue-wash/205437098-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/clarks-originals-wallabee-shoes-in-cola-suede/202778119-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/new-look-long-sleeve-oxford-shirt-in-navy/205456097-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-slim-fit-oxford-shirt-in-white/205341872-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/dkny-logo-slider-slippers-in-black/202805845-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-relaxed-fit-viscose-shirt-with-low-revere-collar-in-black/203983935-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/pullbear-cargo-trouser-in-sand/205195687-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/only-sons-elasticated-waist-tapered-cropped-cord-trousers-in-dark-green/203563537-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/reclaimed-vintage-cropped-relax-trouser-in-black/204721372-1-black?$n_750w$&wid=714&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-chunky-trainers-with-monochrome-and-metallic-panelling/202802561-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/puma-teveris-nitro-trainers-in-white-and-green/204964427-2?$n_320w$&wid=317&fit=constrain",
+    "https://images.asos-media.com/products/asos-design-heavyweight-oversized-hoodie-in-black/204932310-2?$n_320w$&wid=317&fit=constrain"
+]
+
+    let imgDiv = document.querySelector('#images')
+    let next = document.querySelector('#next');
+    let startStop = document.querySelector('#start_stop');
+    let previous = document.querySelector('#previous');
+    let img= document.createElement('img');
+    imgDiv.append(img);
+
+    let count=0;
+    let timer;
+    let iswork=false;
+
+    startStop.addEventListener('click', () => {
+
+        if(!iswork){
+            iswork = true;
+            startStop.innerText="STOP";
+            timer = setInterval(() => {
+                if(count>= images.length-1){
+                    count=0;
+                }else{
+                    count++;
+                }
+                img.src = images[count];
+                console.log(count);
+            }, 1000);
+        }else{
+            iswork = false;
+            clearInterval(timer);
+            startStop.innerText="START";
+        }
+    })
+
+    previous.addEventListener('click', ()=>{
+        clearInterval(timer);
+        if(count <= 0 ){
+            previous.disabled=true;
+        }else{
+            previous.disabled=false;
+            count--;
+            img.src = images[count];
+            console.log(count);
+        }
+    })
+
+    next.addEventListener('click', ()=>{
+        clearInterval(timer);
+        if(count >= images.length - 1 ){
+            previous.disabled=true;
+        }else{
+            previous.disabled=false;
+            count++;
+            img.src = images[count];
+            console.log(count);
+        }
+    })
+
+</script>
+</html>
