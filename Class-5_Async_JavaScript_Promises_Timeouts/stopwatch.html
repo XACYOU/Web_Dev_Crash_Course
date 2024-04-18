@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #stopwatch{
+            border: 1px solid;
+            width: 50%;
+            margin: auto;
+        }
+        #display{
+            width: 100%;
+            font-size: 5rem;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+            align-items:center;
+            margin: 10px auto;
+            border-bottom: 1px solid;
+        }
+        #buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #buttons>button{
+            font-size: 1.5rem;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="stopwatch">
+        <div id="display">
+            0s 00
+        </div>
+        <div id="buttons">
+            <button id="start"> START </button>
+            <button id="pause"> PAUSE </button>
+            <button id="reset"> RESET </button>
+        </div>
+    </div>
+</body>
+<script>
+    let display = document.querySelector('#display');
+    let start = document.querySelector('#start');
+    let pause = document.querySelector('#pause');
+    let reset = document.querySelector('#reset');
+
+    let hour = 0;
+    let min = 0;
+    let sec = 0;
+    let count = 0;
+
+    let timer;
+
+    start.addEventListener('click', ()=>{
+        timer = setInterval(()=>{
+            count++;
+            if(count == 100){
+                sec++;
+                count=0;
+            }
+            if(sec == 60){
+                min++;
+                sec=0;
+            }
+            if(min == 60){
+                hour++;
+                min=0;
+                sec=0;
+            }
+            if (hour>0){
+                display.innerText=`${hour}h ${min}m ${sec}s ${count}`;
+
+            }else if(min>0){
+                display.innerText=`${min}m ${sec}s ${count}`;
+                
+            }else{
+                display.innerText=`${sec}s ${count}`;
+            }
+            console.log(sec);
+        },10)
+    })
+
+    pause.addEventListener('click', ()=>{
+        clearInterval(timer);
+    })
+    reset.addEventListener('click', ()=>{
+        clearInterval(timer);
+        hour=0;
+        min=0;
+        sec=0;
+        count=0;
+        display.innerText=`${sec}s ${count}`;
+    })
+</script>
+</html>
