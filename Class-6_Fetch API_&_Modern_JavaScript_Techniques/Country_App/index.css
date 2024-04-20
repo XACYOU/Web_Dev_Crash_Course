@@ -1,0 +1,30 @@
+#container{
+    width: 70%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#detail{
+    width: 100%;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+#detail > div{
+    font-size: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 20px;
+}
+#name{
+    font-weight: 900;
+    font-size: 2rem;
+}
+b{
+    font-size: 1.5rem;
+}
+#sort-pop{
+    font-size: 1.3rem;
+    padding: 5px;
+    font-weight: bold;
+}
