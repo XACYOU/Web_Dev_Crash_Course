@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #todo-cont{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        button{
+            font-size: 1.5rem;
+            padding: 10px;
+            border: 0;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            margin: 50px auto;
+        }
+        #todos{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        #todo-card{
+            width: 100%;
+            text-align: left;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="todo-cont">
+        <button> Fetch Todos </button>
+        <div id="todos"></div>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("#todo-cont > button");
+    let todosDiv = document.querySelector("#todos");
+
+    let getData = (URL)=>{
+
+        fetch(URL).then((res)=> res.json())
+        .then((data)=>{
+            displayData(data);
+        });
+
+    }
+
+    let displayData = (data)=>{
+
+        data.forEach((ele)=>{
+
+            let todoCard = document.createElement("div");
+            todoCard.id = "todo-card";
+    
+            let title = document.createElement("p");
+            title.id = "title";
+            title.innerText = ele.title;
+    
+            let checkbox = document.createElement("input");
+            checkbox.id = "checkbox";
+            checkbox.type = "checkbox";
+            checkbox.checked = ele.completed;
+    
+            todoCard.append(title, checkbox);
+            todosDiv.append(todoCard);
+        })
+    }
+    
+    btn.addEventListener("click", ()=>{
+        getData("https://jsonplaceholder.typicode.com/todos");
+
+    })
+</script>
+</html>
