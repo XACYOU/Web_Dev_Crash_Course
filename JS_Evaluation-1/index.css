@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 100%;
+}
+#container > h1{
+    text-align: center;
+    margin: 20px;
+    font-size: 4rem;
+}
+#filters{
+    font-size: 1.5rem;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#filters > select{
+    font-size: 1rem;
+    padding: 2px;
+}
+table{
+    width: 90%;
+    margin: 50px auto;
+    text-align: left;
+    font-size: 1.5rem;
+}
+thead > tr{
+    background-color: #F2F2F2;
+}
+thead>tr>th{
+    font-weight: bold;
+    padding: 10px;
+}
+tbody>tr>td{
+    padding: 10px;
+    border-bottom: 1px solid #e2e0e0;
+
+}
+#pagination{
+    width: 30%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+#pagination > h1{
+    padding: 5px;
+    font-size: 3rem;
+}
+#pagination > button{
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}

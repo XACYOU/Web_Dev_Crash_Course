@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="container">
+        <h1> Employee Management System </h1>
+        <div id="filters">
+            <span> Filter by Department:</span>
+            <select id="department">
+                <option value=""> --Select Department-- </option>
+                <option value="hr"> hr </option>
+                <option value="finance"> finance </option>
+                <option value="marketing"> marketing </option>
+                <option value="engineering"> engineering </option>
+                <option value="operations"> operations </option>
+            </select>
+
+            <span> Filter by Gender:</span>
+            <select id="gender">
+                <option value=""> --Select Gender-- </option>
+                <option value="male"> male </option>
+                <option value="female"> female </option>
+            </select>
+
+            <span> Sort by Salary: </span>
+            <select id="salary">
+                <option value=""> Sort by Salary </option>
+                <option value="asc"> low to high </option>
+                <option value="desc"> high to low </option>
+            </select>
+        </div>
+
+        <div id="tabular-data">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="append-data"></tbody>
+            </table>
+        </div>
+
+        <div id="pagination">
+            <button id="prev" disabled> Previous </button>
+            <h1 id="pageCount"></h1>
+            <button id="next"> Next </button>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
