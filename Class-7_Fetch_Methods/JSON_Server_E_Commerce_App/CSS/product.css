@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container h1{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 5rem;
+}
+#top{
+    width: 80%;
+    margin:10px auto;
+}
+#top p{
+    text-align:right ;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#prod-cont{
+    width: 70%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+}
+#prod-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#prod-div > h2{
+    font-size: 1.9rem;
+}
+#prod-div > img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+#pr-ra{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 10px auto;
+}
+#ad-del{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#ad-del > button{
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: bolder;
+}

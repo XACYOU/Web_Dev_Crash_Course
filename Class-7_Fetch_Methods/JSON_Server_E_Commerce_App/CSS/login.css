@@ -1,0 +1,16 @@
+#container{
+    width: 30%;
+    margin: 50px auto;
+}
+h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+form > input{
+    padding: 5px;
+    font-size: 1.5rem;
+}
