@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+      let rootEle = document.querySelector("#root");
+
+      let quote1 = "Seize the day";
+      let quote2 = "Seize the night";
+      let flag = true;
+
+      let para = (
+        <>
+        <p> {flag ? quote1 : quote2} </p>
+        </>
+      )
+
+      ReactDOM.createRoot(rootEle).render(para);
+    </script>
+  </body>
+</html>
