@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    const { useState } = React;
+
+    function checkColor(value) {
+      const smallAlpha = "abcdefABCDEF0123456789";
+      let count = 0;
+
+      if ((value.length === 4 || value.length === 7) && value[0] === "#") {
+        for (let i = 0; i < value.length; i++) {
+          for (let j = 0; j < smallAlpha.length; j++) {
+            if (value[i] === smallAlpha[j]) {
+              count++;
+            }
+          }
+        }
+      }
+      if (count === 3 || count === 6) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    
+    function InputField() {
+      const [colorValue, setColorValue] = useState("");
+
+      function handleChange(e) {
+        setColorValue(e.target.value);
+      }
+
+      
+      const squareDivStyle = {
+        border: "1px solid",
+        width: "200px",
+        height: "100px",
+        margin: "20px",
+        backgroundColor: colorValue ,
+      };
+
+      const feedbackStyle = {
+        color: "red",
+        fontWeight: "bold",
+        display: checkColor(colorValue) ? "none" : "block"
+      }
+
+      return (
+        <>
+          <span>
+            Enter HEX Color Value:
+            <input
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter value here"
+              minLength="4"
+              maxLength="7"
+              value={colorValue}
+            />
+          </span>
+          <p style={feedbackStyle}> Invalid Hex Code </p>
+          <div style={squareDivStyle} className="square-div"></div>
+        </>
+      );
+    }
+
+    function App() {
+      return <InputField />;
+    }
+
+    let rootEle = ReactDOM.createRoot(document.getElementById("root"));
+    rootEle.render(<App />);
+  </script>
+</html>
