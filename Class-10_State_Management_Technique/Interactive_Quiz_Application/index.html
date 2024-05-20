@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function Quiz() {
+      const [myOption, setMyOption] = React.useState({});
+
+      const [submitted, setSubmitted] = React.useState(false);
+      const [ansCount, setAnsCount] = React.useState(0);
+
+      let answer = { one: "Delhi", two: 7, three: "Lion" };
+      let totalCount = 3;
+
+      function handleChange(e, obj) {
+        setMyOption({ ...myOption, ...obj });
+      }
+
+      function handleSubmit() {
+        let correctAnswer = 0;
+        for (let key in answer) {
+          if (answer[key] === myOption[key]) {
+            correctAnswer++;
+          }
+        }
+
+        setAnsCount(correctAnswer);
+        setSubmitted(true);
+      }
+
+      function handleReset() {
+        setSubmitted(false);
+        setAnsCount(0);
+        setMyOption({});
+      }
+
+      return (
+        <>
+          <h1> Quiz (10 marks each)</h1>
+          <div style={{ display: submitted ? "none" : "block" }}>
+            <div>
+              <h2> Q1. What is the capital of India? </h2>
+              <span>
+                <input
+                  name="one"
+                  onChange={(e) => handleChange(e, { one: "Lucknow" })}
+                  value="Lucknow"
+                  type="radio"
+                  checked={myOption.one === "Lucknow"}
+                />
+                Lucknow
+              </span>
+              <span>
+                <input
+                  name="one"
+                  onChange={(e) => handleChange(e, { one: "Kolkata" })}
+                  value="Kolkata"
+                  type="radio"
+                  checked={myOption.one === "Kolkata"}
+                />
+                Kolkata
+              </span>
+              <span>
+                <input
+                  name="one"
+                  onChange={(e) => handleChange(e, { one: "Indore" })}
+                  value="Indore"
+                  type="radio"
+                  checked={myOption.one === "Indore"}
+                />
+                Indore
+              </span>
+              <span>
+                <input
+                  name="one"
+                  onChange={(e) => handleChange(e, { one: "Delhi" })}
+                  value="Delhi"
+                  type="radio"
+                  checked={myOption.one === "Delhi"}
+                />
+                Delhi
+              </span>
+            </div>
+
+            <div>
+              <h2> Q2. How many continents are there in the world? </h2>
+              <span>
+                <input
+                  name="two"
+                  onChange={(e) => handleChange(e, { two: 3 })}
+                  value={3}
+                  type="radio"
+                  checked={myOption.two === 3}
+                />
+                <b>3</b>
+              </span>
+              <span>
+                <input
+                  name="two"
+                  onChange={(e) => handleChange(e, { two: 5 })}
+                  value={5}
+                  type="radio"
+                  checked={myOption.two === 5}
+                />
+                <b>5</b>
+              </span>
+              <span>
+                <input
+                  name="two"
+                  onChange={(e) => handleChange(e, { two: 7 })}
+                  value={7}
+                  type="radio"
+                  checked={myOption.two === 7}
+                />
+                <b>7</b>
+              </span>
+              <span>
+                <input
+                  name="two"
+                  onChange={(e) => handleChange(e, { two: 9 })}
+                  value={9}
+                  type="radio"
+                  checked={myOption.two === 9}
+                />
+                <b>9</b>
+              </span>
+            </div>
+
+            <div>
+              <h2> Q3.Which animal is known as the "King of the Jungle"? </h2>
+              <span>
+                <input
+                  name="three"
+                  onChange={(e) => handleChange(e, { three: "Lion" })}
+                  value="Lion"
+                  type="radio"
+                  checked={myOption.three === "Lion"}
+                />
+                Lion
+              </span>
+              <span>
+                <input
+                  name="three"
+                  onChange={(e) => handleChange(e, { three: "Elephant" })}
+                  value="Elephant"
+                  type="radio"
+                  checked={myOption.three === "Elephant"}
+                />
+                Elephant
+              </span>
+              <span>
+                <input
+                  name="three"
+                  onChange={(e) => handleChange(e, { three: "Tiger" })}
+                  value="Tiger"
+                  type="radio"
+                  checked={myOption.three === "Tiger"}
+                />
+                Tiger
+              </span>
+              <span>
+                <input
+                  name="three"
+                  onChange={(e) => handleChange(e, { three: "Leopard" })}
+                  value="Leopard"
+                  type="radio"
+                  checked={myOption.three === "Leopard"}
+                />
+                Leopard
+              </span>
+            </div>
+            <br />
+
+            <button onClick={handleSubmit}> Submit </button>
+          </div>
+
+          <div style={{ display: submitted ? "block" : "none" }}>
+            <h1>
+              You score {ansCount * 10} out of {totalCount * 10}
+            </h1>
+            <button onClick={handleReset}> Reset </button>
+          </div>
+        </>
+      );
+    }
+
+    function App() {
+      return <Quiz />;
+    }
+
+    const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+    rootElement.render(<App />);
+  </script>
+</html>
