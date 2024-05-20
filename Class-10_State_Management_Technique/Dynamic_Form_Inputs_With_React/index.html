@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function InputField() {
+      const [inputArray, setInputArray] = React.useState([{ value: "HI" }]);
+
+      function handleChange(e, i) {
+        let arr = [...inputArray];
+        arr[i].value = e.target.value;
+        setInputArray(arr);
+      }
+
+      function handleSubmit() {
+        setInputArray([...inputArray, {value:""}]);
+        console.log(inputArray);
+      }
+
+      function handleRemove(i){
+        let filterArr = inputArray.filter((ele, index) => i!==index )
+        setInputArray(filterArr);
+      }
+
+      return (
+        <>
+          <h1>Enter your hobby</h1>
+          {inputArray.map((ele, i) => {
+            return (
+              <div key={i}>
+                <input
+                  onChange={(e) => handleChange(e, i)}
+                  value={ele.value}
+                  type="text"
+                  placeholder="Enter your hobby"
+                />
+                <button onClick={handleSubmit}> Submit </button>
+                <button onClick={() => handleRemove(i)} disabled={inputArray.length === 1}> Remove </button>
+              </div>
+            );
+          })}
+        </>
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <InputField />
+        </>
+      );
+    }
+
+    const rootEle = ReactDOM.createRoot(document.getElementById("root"));
+    rootEle.render(<App />);
+  </script>
+</html>
