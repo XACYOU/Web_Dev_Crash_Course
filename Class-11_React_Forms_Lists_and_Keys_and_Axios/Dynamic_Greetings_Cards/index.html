@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function GreetingCard({greetings, name}){
+        return(
+            <div>
+                <h1> {greetings}, {name} </h1>
+            </div>
+        )
+    }
+
+    function App() {
+
+        const greetArr = [{
+            greetings:"Happy Birthday",
+            name:"John Smith"
+        },{
+            greetings:"Happy Aniversary",
+            name:"Nike Smith"
+        },{
+            greetings:"Happy Birthday",
+            name:"Steve Smith"
+        },{
+            greetings:"Happy Birthday",
+            name:"Nikola Smith"
+        },{
+            greetings:"Happy Birthday",
+            name:"Thomas Smith"
+        }]
+
+      return (
+        <>
+        {greetArr.map((ele,i) =>{
+            return(
+                <div key={i}>  
+                    <GreetingCard  greetings={ele.greetings} name={ele.name} />
+                </div>
+            )
+        })}
+        </>
+      );
+    }
+
+    const rootEle = ReactDOM.createRoot(document.querySelector("#root"));
+    rootEle.render(<App />);
+  </script>
+</html>
