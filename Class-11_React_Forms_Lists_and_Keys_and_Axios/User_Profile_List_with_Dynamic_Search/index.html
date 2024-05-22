@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function UserProfile({ img, name }) {
+      return (
+        <div className="user-list--item">
+          <img src={img} alt={name} />
+          <h2>{name}</h2>
+        </div>
+      );
+    }
+
+    function App() {
+      const [name, setName] = React.useState("");
+      const [users, setUsers] = React.useState([
+        // User data
+        {
+          avatar:
+            "https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg",
+          first_name: "John",
+          last_name: "Smith",
+        },
+        {
+          avatar:
+            "https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg",
+          first_name: "Jane",
+          last_name: "Doe",
+        },
+        {
+          avatar:
+            "https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg",
+          first_name: "Michael",
+          last_name: "Johnson",
+        },
+      ]);
+
+      function handleChange(e){
+        setName(e.target.value);
+      }
+      
+      const filteredArray = users.filter((ele, i) => {
+        return ele.first_name.toLowerCase().includes(name.toLowerCase());
+      });
+
+      return (
+        <div className="user-list">
+          <input onChange={handleChange} placeholder="Enter first name" type="text" />
+          <br />
+          <br />
+          {filteredArray.map((user, i) => {
+            return (
+              <UserProfile
+                key={i}
+                img={user.avatar}
+                name={`${user.first_name} ${user.last_name}`}
+              />
+            );
+          })}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
