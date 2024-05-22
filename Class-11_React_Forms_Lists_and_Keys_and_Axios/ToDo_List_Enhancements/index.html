@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function TodoList() {
+      const [todo, setTodo] = React.useState("");
+      const [todoArr, setTodoArr] = React.useState([
+        { text: "hello todo", status: false },
+      ]);
+
+      function handleNewTodo(e) {
+        setTodo(e.target.value);
+      }
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        setTodoArr([...todoArr, { text: todo, status: false }]);
+        setTodo("");
+      }
+
+      function handleDelete(index) {
+        const filteredArr = todoArr.filter((ele, i) => index !== i);
+        setTodoArr(filteredArr);
+      }
+
+      function handleCheckbox(index) {
+        const updatedArr = todoArr.map((ele, i) =>
+          index === i ? { ...ele, status: !ele.status } : ele
+        );
+        setTodoArr(updatedArr);
+      }
+
+      const inputDivStyle = {
+        textAlign: "center",
+        margin: "40px",
+        fontSize: "2rem",
+      };
+      const inputStyle = {
+        fontSize: "2rem",
+        padding: "10px",
+      };
+
+      const todoListStyle = {
+        border: "1px solid",
+        margin:"20px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      };
+
+      const deleteBtnStyle = {
+        fontSize: "1.5rem",
+        padding: "15px",
+      };
+
+      const labelStyle = {
+        width: "75%",
+        textAlign: "left",
+      };
+
+      const listDivStyle = {
+        width: "25%",
+        height:"100%",
+        display:"flex",
+        justifyContent: "space-evenly",
+      };
+
+      return (
+        <>
+          <div style={inputDivStyle}>
+            <h1> TODO</h1>
+            <form onSubmit={handleSubmit}>
+              <input
+                style={inputStyle}
+                onChange={handleNewTodo}
+                value={todo}
+                type="text"
+                placeholder="Enter a todo"
+              />
+              <input style={inputStyle} type="submit" value="Submit" />
+            </form>
+          </div>
+
+          <div style={inputDivStyle}>
+            <h1> TODO List </h1>
+            {todoArr.map((ele, i) => {
+              return (
+                <div style={todoListStyle} key={i}>
+                  <label style={labelStyle}> {ele.text} </label>
+                  <div style={listDivStyle}>
+                    <button
+                      style={deleteBtnStyle }
+                      onClick={() => handleDelete(i)}
+                    >
+                      Delete
+                    </button>
+                    <input
+                      style={{transform:"scale(1.5)"}}
+                      onChange={() => handleCheckbox(i)}
+                      type="checkbox"
+                      checked={ele.status}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      );
+    }
+
+    const rootEle = ReactDOM.createRoot(document.getElementById("root"));
+    rootEle.render(<TodoList />);
+  </script>
+</html>
