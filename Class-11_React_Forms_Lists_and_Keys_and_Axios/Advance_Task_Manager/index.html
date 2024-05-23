@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    function AddTodo() {
+      const [todo, setTodo] = React.useState("");
+
+      async function handleSubmit() {
+        try {
+          const task = {
+            title: todo,
+            isComplete: false,
+          };
+          setTodo("");
+
+          let req = await axios.post("http://localhost:5000/todos", task);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      return (
+        <>
+          <input
+            onChange={(e) => setTodo(e.target.value)}
+            value={todo}
+            type="text"
+            placeholder="Add new task"
+          />
+          <button onClick={handleSubmit}>Submit</button>
+        </>
+      );
+    }
+
+    function DisplayTodo() {
+      const [todoArr, setTodoArr] = React.useState([]);
+
+      async function getData() {
+        try {
+          let res = await axios.get("http://localhost:5000/todos");
+          setTodoArr(res.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function handleGetData(e) {
+        e.preventDefault();
+        getData();
+      }
+
+      async function handleStatus(ele, i) {
+        try {
+          let task = {
+            ...ele,
+            isComplete: !ele.isComplete,
+          };
+
+          let res = await axios.patch(
+            `http://localhost:5000/todos/${ele.id}`,
+            task
+          );
+          setTodoArr(res.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      async function handleDelete(id) {
+        try {
+          let res = await axios.delete(`http://localhost:5000/todos/${id}`);
+          setTodoArr(res.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      async function handleFilter(e) {
+        let status = e.target.value;
+        let res = await axios.get(
+          `http://localhost:5000/todos?isComplete=${status}`
+        );
+        setTodoArr(res.data);
+      }
+
+      return (
+        <div>
+          <button onClick={handleGetData}> Get All Tasks </button>
+          <select onChange={handleFilter}>
+            <option value="true"> Complete </option>
+            <option value="false"> Pending </option>
+          </select>
+
+          {todoArr.map((ele, i) => {
+            return (
+              <div
+                style={{
+                  margin: "20px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+                key={i}
+              >
+                <span> {ele.title} </span>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <span onClick={() => handleStatus(ele, i)}>
+                    {ele.isComplete ? "Complete" : "Pending"}
+                  </span>
+                  <button onClick={() => handleDelete(ele.id)}>Remove</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <h1> Add TODO </h1>
+          <AddTodo />
+          <h1> Display Todo</h1>
+          <DisplayTodo />
+        </>
+      );
+    }
+
+    const rootEle = ReactDOM.createRoot(document.getElementById("root"));
+    rootEle.render(<App />);
+  </script>
+</html>

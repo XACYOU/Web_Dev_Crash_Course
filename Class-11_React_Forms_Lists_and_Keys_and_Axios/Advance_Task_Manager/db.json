@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "Memorize the fifty states and their capitals",
+      "isComplete": false,
+      "id": 1
+    },
+    {
+      "title": "Contribute code or a monetary donation to an open-source software project",
+      "isComplete": true,
+      "id": 2
+    },
+    {
+      "title": "Contribute code or a monetary donation to an open-source software project",
+      "isComplete": false,
+      "id": 3
+    },
+    {
+      "title": "Contribute code or a monetary donation to an open-source software project",
+      "isComplete": true,
+      "id": 4
+    }
+  ]
+}
