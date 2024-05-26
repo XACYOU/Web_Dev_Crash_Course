@@ -16,11 +16,14 @@ function Posts() {
     try {
       let res = await axios({
         method: "get",
-        url: `https://jsonplaceholder.typicode.com/posts?_limit=10&page=${page}`,
+        url: `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`,
       });
 
       setTotalPages(Math.ceil(Number(res?.headers["x-total-count"]) / 10));
       /*Complete the missing code*/
+      setPosts(res?.data);
+      console.log(posts);
+      setLoading(false);
     } catch (error) {
       setError(true);
       setLoading(false);
@@ -29,6 +32,7 @@ function Posts() {
 
   useEffect(() => {
     /*Complete the missing code*/
+    fetchAndUpdateData(page); 
   }, [page]);
 
   if (loading) {
