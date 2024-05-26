@@ -18,8 +18,8 @@ function App() {
       {/* <UsernameInput /> */}
       {/* <ProfileUpdater /> */}
       {/* <ScoreKeeper /> */}
-      <ShowHideText />
-      {/* <TaskManager /> */}
+      {/* <ShowHideText /> */}
+      <TaskManager />
       {/* <TextInput1 /> */}
       {/* <ToggleMessage1 /> */}
       {/* <UserInfo1 /> */}

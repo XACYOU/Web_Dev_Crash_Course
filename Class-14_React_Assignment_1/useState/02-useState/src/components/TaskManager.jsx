@@ -28,6 +28,7 @@ function TaskManager() {
       <button
         onClick={() => {
           /*complete the missing code*/
+          removeTask()
         }}
       >
         Remove First Task
