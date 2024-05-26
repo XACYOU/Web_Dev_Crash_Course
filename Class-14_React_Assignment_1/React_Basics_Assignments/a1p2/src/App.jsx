@@ -42,9 +42,9 @@ function App() {
       {/* <ItemList1 /> */}
       {/* <FruitList /> */}
       {/* <ButtonClick1 /> */}
-      <ToggleButton />
+      {/* <ToggleButton /> */}
       {/* <Welcome1 name="Bruce Wayne" /> */}
-      {/* <Greeting message="I am Batman" /> */}
+      <Greeting message="I am Batman" />
       {/* <UserCard1 {...user1} /> */}
       {/* <ProfileCard {...user2} /> */}
       {/* <Card1>
