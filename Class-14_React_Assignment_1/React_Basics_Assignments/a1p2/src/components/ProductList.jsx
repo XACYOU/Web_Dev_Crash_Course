@@ -12,7 +12,7 @@ function ProductList() {
     <div>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>{/* complete the missing code */}</li>
+          <li key={product.id}>{product.name}</li>
         ))}
       </ul>
     </div>
