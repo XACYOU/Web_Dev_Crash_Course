@@ -8,7 +8,7 @@ function FruitList() {
     <div>
       <ul>
         {fruits.map((fruit, index) => (
-          <li key={index}>{/* complete the missing code */}</li>
+          <li key={index}>{fruit}</li>
         ))}
       </ul>
     </div>

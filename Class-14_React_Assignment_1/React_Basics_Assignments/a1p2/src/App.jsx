@@ -38,9 +38,9 @@ function App() {
       {/* <Greeting1 /> */}
       {/* <Welcome /> */}
       {/* <ConditionalMessage1 isLoggedIn={true} /> */}
-      <LoginMessage isLoggedIn={true} />
+      {/* <LoginMessage isLoggedIn={true} /> */}
       {/* <ItemList1 /> */}
-      {/* <FruitList /> */}
+      <FruitList />
       {/* <ButtonClick1 /> */}
       {/* <ToggleButton /> */}
       {/* <Welcome1 name="Bruce Wayne" /> */}
