@@ -46,13 +46,13 @@ function App() {
       {/* <Welcome1 name="Bruce Wayne" /> */}
       {/* <Greeting message="I am Batman" /> */}
       {/* <UserCard1 {...user1} /> */}
-      <ProfileCard {...user2} />
+      {/* <ProfileCard {...user2} /> */}
       {/* <Card1>
         <ComponentWrappedWithinCard1Component />
       </Card1> */}
-      {/* <Container>
+      <Container>
         <ComponentWrapperWithinContainerComponent />
-      </Container> */}
+      </Container>
       {/* <UserList1 /> */}
       {/* <ProductList /> */}
       {/* <HighlightList1 /> */}
