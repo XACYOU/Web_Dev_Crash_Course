@@ -10,13 +10,20 @@ function Posts() {
   const [error, setError] = useState(false);
 
   async function fetchAndUpdateData() {
+    setLoading(true);
     try {
       {
         /*Complete the missing code*/
+        const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        setPosts(res?.data);
+        setLoading(false);
       }
     } catch (error) {
       {
         /*Complete the missing code*/
+        setError(true);
+        console.log("error fetching posts", error);
+        setLoading(false);
       }
     }
   }
@@ -35,7 +42,7 @@ function Posts() {
       <button onClick={fetchAndUpdateData}>
         Click to display list of posts
       </button>
-      {/*Complete the missing code*/}
+      {posts?.map((post)=> <Post key={post.id} {...post} /> )}
     </div>
   );
 }
