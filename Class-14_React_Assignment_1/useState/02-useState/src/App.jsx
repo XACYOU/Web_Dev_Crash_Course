@@ -19,7 +19,7 @@ function App() {
       {/* <ProfileUpdater /> */}
       {/* <ScoreKeeper /> */}
       {/* <ShowHideText /> */}
-      <TaskManager />
+      {/* <TaskManager /> */}
       {/* <TextInput1 /> */}
       {/* <ToggleMessage1 /> */}
       {/* <UserInfo1 /> */}
