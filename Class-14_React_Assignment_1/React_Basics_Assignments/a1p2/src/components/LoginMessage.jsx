@@ -3,7 +3,7 @@
 import React from "react";
 
 function LoginMessage({ isLoggedIn }) {
-  return <div>{/* complete the missing code */}</div>;
+  return <div>{ isLoggedIn ? "Hello, User!" : "Acess Denied" }</div>;
 }
 
 export default LoginMessage;
