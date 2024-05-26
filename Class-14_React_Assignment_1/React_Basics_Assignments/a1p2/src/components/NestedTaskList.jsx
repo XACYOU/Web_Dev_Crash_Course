@@ -20,7 +20,7 @@ function NestedTaskList() {
           <h4>{group.status}</h4>
           <ul>
             {group.tasks.map((task, idx) => (
-              <li key={idx}>{/* complete the missing code */}</li>
+              <li key={idx}>{task}</li>
             ))}
           </ul>
         </div>
