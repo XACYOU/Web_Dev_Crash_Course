@@ -40,9 +40,9 @@ function App() {
       {/* <ConditionalMessage1 isLoggedIn={true} /> */}
       {/* <LoginMessage isLoggedIn={true} /> */}
       {/* <ItemList1 /> */}
-      <FruitList />
+      {/* <FruitList /> */}
       {/* <ButtonClick1 /> */}
-      {/* <ToggleButton /> */}
+      <ToggleButton />
       {/* <Welcome1 name="Bruce Wayne" /> */}
       {/* <Greeting message="I am Batman" /> */}
       {/* <UserCard1 {...user1} /> */}

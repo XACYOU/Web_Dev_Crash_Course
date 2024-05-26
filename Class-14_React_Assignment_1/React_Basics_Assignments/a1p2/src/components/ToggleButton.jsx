@@ -11,7 +11,7 @@ function ToggleButton() {
 
   return (
     <div>
-      <p>{/*Complete missing code*/}</p>
+      <p>{ isOn ? "ON" : "OFF" }</p>
       <button onClick={handleClick}>Toggle</button>
     </div>
   );
