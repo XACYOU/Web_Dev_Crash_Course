@@ -31,7 +31,7 @@ function ProfileUpdater() {
         onChange={handleInputChange}
       />
       <input
-        type="text"
+        type="number"
         name="phoneNumber"
         placeholder="Phone Number"
         value={profile.phoneNumber}
