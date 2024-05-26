@@ -16,9 +16,9 @@ function App() {
       Uncomment to get particular component
       {/* <Counter1 /> */}
       {/* <UsernameInput /> */}
-      <ProfileUpdater />
+      {/* <ProfileUpdater /> */}
       {/* <ScoreKeeper /> */}
-      {/* <ShowHideText /> */}
+      <ShowHideText />
       {/* <TaskManager /> */}
       {/* <TextInput1 /> */}
       {/* <ToggleMessage1 /> */}

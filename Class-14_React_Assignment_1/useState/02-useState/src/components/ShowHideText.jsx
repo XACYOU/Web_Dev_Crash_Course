@@ -10,9 +10,10 @@ function ShowHideText() {
       <button
         onClick={() => {
           /* complete the missing code */
+          setShowText((prevVal) => !prevVal);
         }}
       >
-        Show/Hide Text
+        {!showText ? "Show Text" : "Hide Text"}
       </button>
       {showText && <p>This is a toggled text!</p>}
     </div>
