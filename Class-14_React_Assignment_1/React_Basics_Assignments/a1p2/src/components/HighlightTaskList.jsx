@@ -12,7 +12,7 @@ function HighlightTaskList() {
             key={index}
             style={{ fontWeight: task === "Urgent Task" ? "bold" : "normal" }}
           >
-            {/* complete the missing code */}
+            {task}
           </li>
         ))}
       </ul>
