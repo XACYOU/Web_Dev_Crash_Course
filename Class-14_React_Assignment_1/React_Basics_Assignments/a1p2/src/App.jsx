@@ -36,7 +36,7 @@ function App() {
     <>
       Uncomment to view particular component
       {/* <Greeting1 /> */}
-      {/* <Welcome /> */}
+      <Welcome />
       {/* <ConditionalMessage1 isLoggedIn={true} /> */}
       {/* <LoginMessage isLoggedIn={true} /> */}
       {/* <ItemList1 /> */}
