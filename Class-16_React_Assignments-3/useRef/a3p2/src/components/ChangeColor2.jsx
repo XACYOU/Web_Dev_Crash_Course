@@ -7,6 +7,7 @@ function ChangeColor2() {
 
   const handleChangeColor = () => {
     // complete the missing code
+    divRef.current.style.backgroundColor="blue";
   };
 
   return (
