@@ -5,6 +5,9 @@ import Contact from "../pages/Contact";
 import Users from "../pages/Users";
 import Login from "../pages/Login";
 import UserDetails from "../pages/UserDetails";
+import Courses from "../pages/Courses";
+import Learn from "../pages/Learn";
+import Fees from "../pages/Fees";
 
 export default function AllRoutes() {
   return (
@@ -15,6 +18,9 @@ export default function AllRoutes() {
       <Route path="/users" element={<Users />} />
       <Route path="/login" element={<Login />} />
       <Route path="/users/:user_id" element={<UserDetails />} />
+      <Route path="/courses" element={<Courses />} />
+      <Route path="/learn" element={<Learn />} />
+      <Route path="/fees" element={<Fees />} />
     </Routes>
   );
 }
