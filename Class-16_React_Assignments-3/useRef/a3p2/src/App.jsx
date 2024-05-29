@@ -9,7 +9,7 @@ function App() {
     <>
       {/* <FocusInput1 /> */}
       {/* <FocusInput2 /> */}
-      <ChangeColor1 />
+      {/* <ChangeColor1 /> */}
       {/* <ChangeColor2 /> */}
     </>
   );
