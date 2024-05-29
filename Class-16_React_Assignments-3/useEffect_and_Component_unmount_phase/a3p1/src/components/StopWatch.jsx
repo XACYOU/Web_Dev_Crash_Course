@@ -7,6 +7,17 @@ function StopWatch() {
 
   useEffect(() => {
     /*Complete the missing code*/
+    const intervalId = setInterval(()=>{
+      setCount((prevValue)=>{
+        if(prevValue >= 9){
+          clearInterval(intervalId);
+        }
+        return prevValue+1;
+      })
+    },1000);
+
+    return ()=> clearInterval(intervalId);
+    
   }, []);
 
   return (
