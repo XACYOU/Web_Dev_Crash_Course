@@ -9,10 +9,12 @@ export function BulbContextProvider(props) {
 
   const switchOn = () => {
     /*complete the missing code*/
+    setIsOn(true);
   };
 
   const switchOff = () => {
     /*complete the missing code*/
+    setIsOn(false);
   };
 
   return (
@@ -20,6 +22,9 @@ export function BulbContextProvider(props) {
       value={
         {
           /*complete the missing code*/
+          isOn,
+          switchOn,
+          switchOff
         }
       }
     >
